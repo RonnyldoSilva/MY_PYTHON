@@ -19,3 +19,4 @@ def scrape(id = None):
     response = s.post(POST_URL, headers=headers, json={"id":id,"naturezas":"0000000"})
     print(response.content)
 ```
+ 
