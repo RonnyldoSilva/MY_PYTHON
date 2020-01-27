@@ -21,7 +21,7 @@ def scrape(id = None):
 ```
 
 Filtrando json pela URL:
-```
+``` python
 def test():
     s = session.requests_retry_session()
     response = s.post(PAP_TOKEN, headers=HEADERS_TOKEN, data=json.dumps(BODY_TOKEN), verify=True)
