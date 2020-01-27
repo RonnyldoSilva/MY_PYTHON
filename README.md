@@ -20,15 +20,27 @@ def scrape(id = None):
     print(response.content)
 ```
 
-Filtrando json pela URL:
+### Filtrando json pela URL:
+
+tu pode colocar data_inicio_atv__lte=20192701
+
+esse "__lte" no final significa "less than or equal"
+
+ai só vai pegar empresas qu abriram até um ano atras
+
+e como eu faço para filtrar por um intervalo de tempo? por exemplo, entre 1 e 3 anos?
+
+tu pode mandar a mesma string duas vezes
+
+primeiro manda data_inicio_atv__lte=20192701 e depois data_inicio_atv__gte=20162701
+
 ``` python
 def test():
     s = session.requests_retry_session()
-    response = s.post(PAP_TOKEN, headers=HEADERS_TOKEN, data=json.dumps(BODY_TOKEN), verify=True)
+    response = s.post(URL, headers=HEADERS_TOKEN, data=json.dumps(BODY_TOKEN), verify=True)
     headers = {}
     headers['Authorization'] = 'Bearer {}'.format(response.json()['access'])
-    url = 'https://pap.pxs.ch/api/rfb-cnpj/empresas?data_inicio_ativ__lte=20190127&data_inicio_ativ__gte=20180127'
-    #url = PAPYRUS_EMPRESAS + '&uf=' + uf + '&porte=' + porte + '&opc_mei=' + opc_mei + '&opc_simples=' + opc_simples
+    url = 'https://suaAPI/empresas?data_inicio_ativ__lte=20190127&data_inicio_ativ__gte=20180127'
     response = s.get(url, headers=headers)
     print(response.content)
 ```
