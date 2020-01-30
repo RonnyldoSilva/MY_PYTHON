@@ -1,7 +1,11 @@
 # PYTHON POWER
 
-### Captcha Solver
+### Filter Numbers from string
+``` python
+doc = ''.join(filter(lambda x: x.isdigit(), doc)
+```
 
+### Captcha Solver
 ```python
 def scrape(id = None):
     if not id:
