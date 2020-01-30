@@ -1,6 +1,6 @@
 # PYTHON POWER
 
-### All utils python function
+### Captcha Solver
 
 ```python
 def scrape(id = None):
