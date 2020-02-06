@@ -48,3 +48,29 @@ def test():
     response = s.get(url, headers=headers)
     print(response.content)
 ```
+
+### parser string
+
+```python
+def credit_bureau_parser(response):
+    results = {}
+    resp_str = response.text
+    head = 0
+
+    while head < len(resp_str) - 1:
+        cod_reg = resp_str[head:head+4]
+
+        structure_reg = sr.regs_maps[cod_reg]
+        reg = {}
+        for row in structure_reg:
+            reg[row[4]] = resp_str[head:head + row[2]]
+            head += row[2]
+
+        if not cod_reg in results:
+            results[cod_reg] = reg
+        else:
+            if isinstance(results[cod_reg], dict):
+                results[cod_reg] = [ results[cod_reg], reg ]
+            else:
+                results[cod_reg].append(reg)
+```
