@@ -52,7 +52,7 @@ def test():
 ### parser string
 
 ```python
-def credit_bureau_parser(response):
+def string_parser(response):
     results = {}
     resp_str = response.text
     head = 0
@@ -73,4 +73,6 @@ def credit_bureau_parser(response):
                 results[cod_reg] = [ results[cod_reg], reg ]
             else:
                 results[cod_reg].append(reg)
+                
+    return results
 ```
