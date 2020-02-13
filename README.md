@@ -76,3 +76,12 @@ def string_parser(response):
                 
     return results
 ```
+
+### FLASK: send data to front-end:
+```python
+@app.route('/smileCounter')
+def smileCounter():
+    return str(faceHunter.getSmileCounter())
+    
+app.jinja_env.globals.update(smileCounter=smileCounter) 
+```
