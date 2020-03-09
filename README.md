@@ -83,3 +83,8 @@ response = s.post(URL_ROOT, data=DATA, timeout = 15)
 
 print(response.content.decode('utf-8'))
 ```
+
+### Print JSON 
+```python
+print(json.dumps(result, indent=4, ensure_ascii=False))
+```
