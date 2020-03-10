@@ -93,3 +93,8 @@ print(json.dumps(result, indent=4, ensure_ascii=False))
 ```shell
 sed -i 's/\x0//g' empresas.csv
 ```
+
+### Split CSV 1000 lines each
+```shell
+split -l 1000 empresas.csv new.csv
+```
