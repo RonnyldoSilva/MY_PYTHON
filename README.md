@@ -88,3 +88,8 @@ print(response.content.decode('utf-8'))
 ```python
 print(json.dumps(result, indent=4, ensure_ascii=False))
 ```
+
+### Remove NULL bytes
+```shell
+sed -i 's/\x0//g' empresas.csv
+```
