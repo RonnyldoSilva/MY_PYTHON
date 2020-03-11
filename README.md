@@ -98,3 +98,24 @@ sed -i 's/\x0//g' empresas.csv
 ```shell
 split -l 1000 empresas.csv new.csv
 ```
+
+### Reading the first column of a CSV
+```python
+def get_protestos_from_cenprot(csv_file):
+    with open(csv_file, 'r') as read_obj, \
+        open('output.csv', 'w', newline='') as write_obj:
+            csv_reader = csv.reader(read_obj, delimiter=';')
+            csv_writer = csv.writer(write_obj, delimiter=';')
+            jump_first_line = True
+            for row in csv_reader:
+                if jump_first_line:
+                    jump_first_line = False
+                    continue
+                print(row[0])
+                protestos = sc.scrape(row[0])
+                if protestos['qtdTitulos'] > 0:
+                    print(protestos['cartorio'])
+                else:
+                    print(protestos['qtdTitulos'])
+```
+
