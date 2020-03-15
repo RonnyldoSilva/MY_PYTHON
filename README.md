@@ -130,17 +130,17 @@ def get_protestos_from_cenprot(csv_file):
 ## PDF
 ### pdf to table:
 ```python
-def get_table(pdf):
-    table = []
-    with open(pdf, "rb") as f:
-        pages = pdftotext.PDF(f)
-        for page in pages:
-            lines = page.split('\n')
-            for line in lines:
-                words = line.split('   ')
-                while("" in words): 
-                    words.remove("")
-                table.append(words)
+   def get_table(pdf):
+       table = []
+       with open(pdf, "rb") as f:
+           pages = pdftotext.PDF(f)
+           for page in pages:
+               lines = page.split('\n')
+               for line in lines:
+                   words = line.split('   ')
+                   while("" in words): 
+                       words.remove("")
+                   table.append(words)
 
-    return table
+       return table
 ```
