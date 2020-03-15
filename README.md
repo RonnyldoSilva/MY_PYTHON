@@ -122,7 +122,7 @@ def get_protestos_from_cenprot(csv_file):
 ## BeautifulSoup
 ### get input tag from html
 ```python
-soup = BeautifulSoup(response.text.strip(), 'html.parser')
+    soup = BeautifulSoup(response.text.strip(), 'html.parser')
     inputs = soup.find_all('input')
-    print(inputs[7])
+    token = inputs[7]['name'] #to get the value of attribute name.
 ```
