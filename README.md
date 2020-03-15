@@ -120,3 +120,4 @@ def get_protestos_from_cenprot(csv_file):
 ```
 
 ## BeautifulSoup
+### get input tag from html
