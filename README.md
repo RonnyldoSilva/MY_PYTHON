@@ -119,3 +119,4 @@ def get_protestos_from_cenprot(csv_file):
                     print(protestos['qtdTitulos'])
 ```
 
+## BeautifulSoup
