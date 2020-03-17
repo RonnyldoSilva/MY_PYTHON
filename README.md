@@ -126,6 +126,20 @@ def get_protestos_from_cenprot(csv_file):
     inputs = soup.find_all('input')
     token = inputs[7]['name'] #to get the value of attribute name.
 ```
+### get text between tags:
+```python
+results = []
+    for i in range(0,len(rows[1]), 9):
+        results.append({
+            'nome_do_funcionario': rows[1][i+1].text.strip(),
+            'sigla_orgao': rows[1][i+2].text.strip(),
+            'cargo': rows[1][i+3].text.strip(),
+            'data_admissao': rows[1][i+4].text.strip(),
+            'valor_bruto': rows[1][i+5].text.strip(),
+            'descontos': rows[1][i+6].text.strip(),
+            'valor_bruto_descontos': rows[1][i+7].text.strip()
+        })
+```
 
 ## PDF
 ### pdf to table:
