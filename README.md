@@ -162,5 +162,16 @@ results = []
 ## JSON
 ### remove spaces from a dictionary keys and values:
 ```python
+response_json = response_json['content']
+    
+    results = []
 
+    for resp in response_json:
+        result = {
+            x.strip() : str(y).strip()
+            for x, y in resp.items()
+        }
+        results.append(result)
+
+    return results
 ```
