@@ -68,7 +68,8 @@ def string_parser(response):
     return results
 ```
 
-### FLASK: send data to front-end:
+## FLASK
+### send data to front-end:
 ```python
 @app.route('/smileCounter')
 def smileCounter():
@@ -79,9 +80,9 @@ app.jinja_env.globals.update(smileCounter=smileCounter)
 
 ### Parser HTML to print:
 ```python
-response = s.post(URL_ROOT, data=DATA, timeout = 15)
+   response = s.post(URL_ROOT, data=DATA, timeout = 15)
 
-print(response.content.decode('utf-8'))
+   print(response.content.decode('utf-8'))
 ```
 
 ### Print JSON 
