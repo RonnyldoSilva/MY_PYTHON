@@ -158,3 +158,5 @@ results = []
 
        return table
 ```
+
+## JSON
