@@ -162,7 +162,7 @@ results = []
 ## JSON
 ### remove spaces from a dictionary keys and values:
 ```python
-response_json = response_json['content']
+    response_json = response_json['content']
     
     results = []
 
