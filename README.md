@@ -160,3 +160,4 @@ results = []
 ```
 
 ## JSON
+### remove spaces from a dictionary keys and values:
