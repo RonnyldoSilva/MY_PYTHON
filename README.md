@@ -24,7 +24,7 @@ def scrape(id = None):
     print(response.content)
 ```
 
-### Filtrando json pela URL:
+### Filtrando json pela URL: 
 
 "Coloque data_inicio_atv__lte=20192701, esse "__lte" no final significa "less than or equal", ai só vai pegar empresas qu abriram até um ano atras, e como eu faço para filtrar por um intervalo de tempo? por exemplo, entre 1 e 3 anos? 
 tu pode mandar a mesma string duas vezes, primeiro manda data_inicio_atv__lte=20192701 e depois data_inicio_atv__gte=20162701" 
