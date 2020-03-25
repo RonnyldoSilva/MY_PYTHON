@@ -142,6 +142,15 @@ results = []
         })
 ```
 
+### Get json from javascript function
+```pytthon
+    salt = table_inputs[6]['value']
+    table_scripts = soup.find_all('script', {'type':'text/javascript'})
+    pattern = re.compile(r'\{\"regionId\".*?\}')
+    data = pattern.search(table_scripts[0].text).group()
+    data = json.loads(data)
+```
+
 ## PDF
 ### pdf to table:
 ```python
