@@ -123,65 +123,65 @@ def get_protestos_from_cenprot(csv_file):
 ## BeautifulSoup
 ### get input tag from html
 ```python
-    soup = BeautifulSoup(response.text.strip(), 'html.parser')
-    inputs = soup.find_all('input')
-    token = inputs[7]['name'] #to get the value of attribute name.
+   soup = BeautifulSoup(response.text.strip(), 'html.parser')
+   inputs = soup.find_all('input')
+   token = inputs[7]['name'] #to get the value of attribute name.
 ```
 ### get text between tags:
 ```python
 results = []
-    for i in range(0,len(rows[1]), 9):
-        results.append({
-            'nome_do_funcionario': rows[1][i+1].text.strip(),
-            'sigla_orgao': rows[1][i+2].text.strip(),
-            'cargo': rows[1][i+3].text.strip(),
-            'data_admissao': rows[1][i+4].text.strip(),
-            'valor_bruto': rows[1][i+5].text.strip(),
-            'descontos': rows[1][i+6].text.strip(),
-            'valor_bruto_descontos': rows[1][i+7].text.strip()
-        })
+for i in range(0,len(rows[1]), 9):
+    results.append({
+        'nome_do_funcionario': rows[1][i+1].text.strip(),
+        'sigla_orgao': rows[1][i+2].text.strip(),
+        'cargo': rows[1][i+3].text.strip(),
+        'data_admissao': rows[1][i+4].text.strip(),
+        'valor_bruto': rows[1][i+5].text.strip(),
+        'descontos': rows[1][i+6].text.strip(),
+        'valor_bruto_descontos': rows[1][i+7].text.strip()
+    })
 ```
 
 ### Get json from javascript function
 ```pytthon
-    salt = table_inputs[6]['value']
-    table_scripts = soup.find_all('script', {'type':'text/javascript'})
-    pattern = re.compile(r'\{\"regionId\".*?\}')
-    data = pattern.search(table_scripts[0].text).group()
-    data = json.loads(data)
+salt = table_inputs[6]['value']
+table_scripts = soup.find_all('script', {'type':'text/javascript'})
+pattern = re.compile(r'\{\"regionId\".*?\}')
+data = pattern.search(table_scripts[0].text).group()
+data = json.loads(data)
 ```
 
 ## PDF
 ### pdf to table:
 ```python
-   def get_table(pdf):
-       table = []
-       with open(pdf, "rb") as f:
-           pages = pdftotext.PDF(f)
-           for page in pages:
-               lines = page.split('\n')
-               for line in lines:
-                   words = line.split('   ')
-                   while("" in words): 
-                       words.remove("")
-                   table.append(words)
+def get_table(pdf):
+    table = []
+    with open(pdf, "rb") as f:
+        pages = pdftotext.PDF(f)
+        for page in pages:
+            lines = page.split('\n')
+            for line in lines:
+                words = line.split('   ')
+                while("" in words): 
+                    words.remove("")
+                table.append(words)
 
-       return table
+    return table
 ```
 
 ## JSON
 ### remove spaces from a dictionary keys and values:
 ```python
-    response_json = response_json['content']
-    
-    results = []
+response_json = response_json['content']
 
-    for resp in response_json:
-        result = {
-            x.strip() : str(y).strip()
-            for x, y in resp.items()
-        }
-        results.append(result)
+results = []
+
+for resp in response_json:
+    result = {
+        x.strip() : str(y).strip()
+        for x, y in resp.items()
+    }
+    results.append(result)
 
     return results
 ```
