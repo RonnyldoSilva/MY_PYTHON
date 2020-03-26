@@ -185,3 +185,9 @@ results = []
 
     return results
 ```
+## DATA
+### compare dates:
+```python3
+def compare_date(a = '20201125', b = '20190210'):
+    return datetime(int(a[0:4]), int(a[4:6]), int(a[6:8])) >= datetime(int(b[0:4]), int(b[4:6]), int(b[6:8]))
+```
