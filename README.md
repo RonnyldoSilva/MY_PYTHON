@@ -192,3 +192,14 @@ from datetime import datetime
 def compare_date(a = '20201125', b = '20190210'):
     return datetime(int(a[0:4]), int(a[4:6]), int(a[6:8])) >= datetime(int(b[0:4]), int(b[4:6]), int(b[6:8]))
 ```
+
+## Filter CSV
+```python3
+def filter_companies_by_opc_mei(csv_file):
+    print(csv_file)
+    with open(csv_file,'r') as fin:
+        writer = csv.writer(open('data_to_regression_not_mei.csv','w'), delimiter=';')
+        for row in csv.reader(fin, delimiter=';'):
+            if row[35] == 'N':
+                writer.writerow(row)
+```
