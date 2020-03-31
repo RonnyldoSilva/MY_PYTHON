@@ -203,3 +203,9 @@ def filter_companies_by_opc_mei(csv_file):
             if row[35] == 'N':
                 writer.writerow(row)
 ```
+
+## String
+### edit string from variable
+```python
+
+```
