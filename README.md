@@ -207,5 +207,6 @@ def filter_companies_by_opc_mei(csv_file):
 ## String
 ### edit string from variable
 ```python
-
+payload = 'parampara_ano=' + ano + '&parammes_=' + mes + '&paramsituacao={status}&parampara_orgao=%25&parampesquisa_=' + doc + '&paramoffset_=0&paramlimit_=50' 
+response_ativo = s.post(URL, data=payload.format(status = ''.join('Ativo')), headers=HEADERS)
 ```
