@@ -1,5 +1,5 @@
 # MY PYTHON NOTES
-
+ 
 ### Filter Numbers from string
 ``` python
 doc = ''.join(filter(lambda x: x.isdigit(), doc)
