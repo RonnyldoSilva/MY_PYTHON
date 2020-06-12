@@ -26,7 +26,7 @@ car2.color = "blue"
 car2.kind = "van"
 car2.value = 10000.00
 
-# test code
+# test code 
 print(car1.description())
 print(car2.description())
 ```
