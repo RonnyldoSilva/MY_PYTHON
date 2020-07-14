@@ -236,8 +236,27 @@ def filter_companies_by_opc_mei(csv_file):
 ```
 
 ## String
-### edit string from variable
+### edit string from variables
 ```python
 payload = 'parampara_ano=' + ano + '&parammes_=' + mes + '&paramsituacao={status}&parampara_orgao=%25&parampesquisa_=' + doc + '&paramoffset_=0&paramlimit_=50' 
 response_ativo = s.post(URL, data=payload.format(status = ''.join('Ativo')), headers=HEADERS)
+```
+
+## Modules and Packages
+```python
+# game.py
+# import the draw module
+import draw
+
+def play_game():
+    ...
+
+def main():
+    result = play_game()
+    draw.draw_game(result)
+
+# this means that if this script is executed, then 
+# main() will be executed
+if __name__ == '__main__':
+    main()
 ```
