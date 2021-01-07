@@ -1,5 +1,19 @@
 # MY PYTHON NOTES 
 
+### Convert np.array of type float64 to type uint8 scaling values
+```python
+import numpy as np
+import cv2
+[...]
+info = np.iinfo(data.dtype) # Get the information of the incoming image type
+data = data.astype(np.float64) / info.max # normalize the data to 0 - 1
+data = 255 * data # Now scale by 255
+
+img = data.astype(np.uint8)
+
+cv2.imshow("Window", img)
+```
+
 ## Classes:
 ### Class Example:
 ```python
