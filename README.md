@@ -1,4 +1,4 @@
-# MY PYTHON NOTES 
+# MY PYTHON
 
 ### Convert np.array of type float64 to type uint8 scaling values
 ```python
