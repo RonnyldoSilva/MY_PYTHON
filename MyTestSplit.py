@@ -2,13 +2,13 @@ from random import randint
 from os import listdir, chdir, getcwd
 from shutil import move
 
-base_path = '/home/ia-ufpe/Radomica/Projeto/Inf-Net-Nuclearis/Dataset'
+base_path = '/home/Dataset'
 
-train_imgs = base_path + '/TrainingSet/LungInfection-Train/Doctor-label/Imgs'
-train_gt = base_path + '/TrainingSet/LungInfection-Train/Doctor-label/GT'
+train_imgs = base_path + '/TrainingSet/Imgs'
+train_gt = base_path + '/TrainingSet/GT'
 
-test_imgs = base_path + '/TestingSet/LungInfection-Test/Imgs'
-test_gt = base_path + '/TestingSet/LungInfection-Test/GT'
+test_imgs = base_path + '/TestingSet/Imgs'
+test_gt = base_path + '/TestingSet/GT'
 
 #Ramdomly select images from training set
 
